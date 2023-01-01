@@ -1,5 +1,13 @@
-function App() {
-  return <div>helo world</div>;
+import "./styles/App.css";
+import React, { Component } from "react";
+class App extends Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    return <div>hello world</div>;
+  }
 }
 
 export default App;
