@@ -131,47 +131,57 @@ class GeneralInfo extends Component {
         <div className="generalInfoTitle">General information</div>
         {this.state.editStatus && (
           <form onSubmit={this.handleSubmit}>
-            <label>
-              name
-              <input
-                type="text"
-                defaultValue={this.state.recordedInfo.name}
-                onChange={this.handleName}
-              />
-            </label>
-            <label>
-              email
-              <input
-                type="email"
-                defaultValue={this.state.recordedInfo.email}
-                onChange={this.handleEmail}
-              />
-            </label>
-            <label>
-              phone number
-              <input
-                type="tel"
-                defaultValue={this.state.recordedInfo.phoneNo}
-                onChange={this.handlePhoneNo}
-              />
-            </label>
-            <label>
-              address
-              <input
-                type="text"
-                defaultValue={this.state.recordedInfo.address}
-                onChange={this.handleAdress}
-              />
-            </label>
-            <label>
-              about you
-              <textarea
-                rows="5"
-                columns="33"
-                defaultValue={this.state.recordedInfo.about}
-                onChange={this.handleAbout}
-              />
-            </label>
+            <div>
+              <label>
+                name
+                <input
+                  type="text"
+                  defaultValue={this.state.recordedInfo.name}
+                  onChange={this.handleName}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                email
+                <input
+                  type="email"
+                  defaultValue={this.state.recordedInfo.email}
+                  onChange={this.handleEmail}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                phone number
+                <input
+                  type="tel"
+                  defaultValue={this.state.recordedInfo.phoneNo}
+                  onChange={this.handlePhoneNo}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                address
+                <input
+                  type="text"
+                  defaultValue={this.state.recordedInfo.address}
+                  onChange={this.handleAdress}
+                />
+              </label>
+              
+            </div><div>
+              <label>
+                about you
+                <textarea
+                  rows="5"
+                  columns="33"
+                  defaultValue={this.state.recordedInfo.about}
+                  onChange={this.handleAbout}
+                />
+              </label>
+            </div>
             <button type="submit">add my info</button>
           </form>
         )}

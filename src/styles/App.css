@@ -3,10 +3,12 @@
   font-family: monospace;
   font-weight: bold;
   font-size: 100%;
+  margin: 3px;
 }
 
-.appContainer{
+.appContainer {
+  width: 100vw;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: repeat(4,minmax(200px,1fr));
+  grid-template-rows: 30px repeat(4, minmax(200px, 1fr));
 }

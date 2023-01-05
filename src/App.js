@@ -3,19 +3,22 @@ import "./styles/App.css";
 import GeneralInfo from "./components/GeneralInfo";
 import Education from "./components/Education";
 import WorkInfo from "./components/Workinfo";
-import Skills from "./components/Skills"
+import Skills from "./components/Skills";
 class App extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   render() {
-    return <div className="appContainer">
-      <GeneralInfo/>
-      <Education/>
-      <WorkInfo/>
-      <Skills/>
-    </div>;
+    return (
+      <div className="appContainer">
+        <div>Cv builder app</div>
+        <GeneralInfo />
+        <Education />
+        <WorkInfo />
+        <Skills />
+      </div>
+    );
   }
 }
 
