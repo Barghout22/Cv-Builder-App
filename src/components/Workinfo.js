@@ -20,16 +20,28 @@ class WorkInfo extends Component {
         startDate: "start date",
         endDate: "end date",
       },
-      editStatus: "not active",
+      additionStatus: false,
     };
+    this.toggleAddition = this.toggleAddition.bind(this);
+  }
+
+  toggleAddition() {
+    this.setState({
+      additionStatus: true,
+    });
   }
 
   render() {
     return (
       <div>
         <div>Work information</div>
-        <DisplayUnitComponent displayNames={this.state.displayNames} />
-        <button>Add Experience</button>
+        <DisplayUnitComponent
+          displayNames={this.state.displayNames}
+          additionStatus={this.state.additionStatus}
+        />
+        {!this.state.additionStatus && (
+          <button onClick={this.toggleAddition}>Add Experience</button>
+        )}
       </div>
     );
   }
