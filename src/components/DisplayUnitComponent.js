@@ -14,11 +14,13 @@ class DisplayUnitComponent extends Component {
               <div key={item.id}>
                 <p>
                   {" "}
-                  {this.props.displayNames.title}:{item.studyTitle}
+                  {this.props.displayNames.title}:
+                  {item.studyTitle || item.workTitle}
                 </p>
                 <p>
                   {" "}
-                  {this.props.displayNames.schoolName}:{item.schoolName}
+                  {this.props.displayNames.schoolName}:
+                  {item.schoolName || item.companyName}
                 </p>
                 <p> start Date:{item.startDate}</p>
                 <p>End Date:{item.endDate} </p>
