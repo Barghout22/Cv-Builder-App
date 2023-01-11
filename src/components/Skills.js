@@ -3,7 +3,8 @@ import uniqid from "uniqid";
 
 const Skills = () => {
   const [skillList, setSkillList] = useState([]);
-  const [editedSkill, setEditedSkill] = useState({ skill: "", id: uniqid() });
+  const [editedSkill, setEditedSkill] = useState("");
+  const [editedSkillId, setEditedSkillId] = useState(uniqid());
   const [addStatus, setAddStatus] = useState(false);
 
   const addSkill = () => {
@@ -11,12 +12,13 @@ const Skills = () => {
   };
 
   const handleChange = (event) => {
-    setEditedSkill((editedSkill.skill = event.target.value));
+    setEditedSkill(event.target.value);
   };
 
   const handleAddition = () => {
-    setSkillList(skillList.concat(editedSkill));
-    setEditedSkill({ skill: "", id: uniqid() });
+    setSkillList(skillList.concat({ skill: editedSkill, id: editedSkillId }));
+    setEditedSkill("");
+    setEditedSkillId(uniqid());
     setAddStatus(false);
   };
   const deleteSkill = (id) => {

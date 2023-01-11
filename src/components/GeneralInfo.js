@@ -1,69 +1,61 @@
 import React, { useState } from "react";
 
 const GeneralInfo = () => {
-  const [recordedInfo, setRecordedInfo] = useState({
-    name: " ",
-    email: " ",
-    phoneNo: " ",
-    address: " ",
-    about: " ",
-  });
-  const [editedInfo, setEditedInfo] = useState({
-    name: " ",
-    email: " ",
-    phoneNo: " ",
-    address: " ",
-    about: " ",
-  });
+  const [recordedInfoName, setRecordedInfoName] = useState("");
+  const [recordedInfoEmail, setRecordedInfoEmail] = useState("");
+  const [recordedInfoPhoneNo, setRecordedInfoPhoneNo] = useState("");
+  const [recordedInfoAddress, setRecordedInfoAddress] = useState("");
+  const [recordedInfoAbout, setRecordedInfoAbout] = useState("");
+
+  const [editedInfoName, setEditedInfoName] = useState(" ");
+  const [editedInfoEmail, setEditedInfoEmail] = useState(" ");
+  const [editedInfoPhoneNo, setEditedInfoPhoneNo] = useState(" ");
+  const [editedInfoAddress, setEditedInfoAddress] = useState(" ");
+  const [editedInfoAbout, setEditedInfoAbout] = useState(" ");
+
   const [editStatus, setEditStatus] = useState(true);
   const activateEditStatus = () => {
     setEditStatus(true);
   };
-  const handleEmail = (event) => {
-    setEditedInfo((editedInfo.email = event.target.value));
-  };
   const handleName = (event) => {
-    setEditedInfo((editedInfo.name = event.target.value));
+    setEditedInfoName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEditedInfoEmail(event.target.value);
   };
 
   const handlePhoneNo = (event) => {
-    setEditedInfo((editedInfo.phoneNo = event.target.value));
+    setEditedInfoPhoneNo(event.target.value);
   };
   const handleAddress = (event) => {
-    setEditedInfo((editedInfo.address = event.target.value));
+    setEditedInfoAddress(event.target.value);
   };
   const handleAbout = (event) => {
-    setEditedInfo((editedInfo.address = event.target.value));
+    setEditedInfoAbout(event.target.value);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    setRecordedInfo(
-      (recordedInfo.name =
-        editedInfo.name === " " ? recordedInfo.name : editedInfo.name)
+    setRecordedInfoName(
+      editedInfoName === " " ? recordedInfoName : editedInfoName
     );
-    setRecordedInfo(
-      (recordedInfo.email =
-        editedInfo.email === " " ? recordedInfo.email : editedInfo.email)
+    setRecordedInfoEmail(
+      editedInfoEmail === " " ? recordedInfoEmail : editedInfoEmail
     );
-    setRecordedInfo(
-      (recordedInfo.phoneNo =
-        editedInfo.phoneNo === " " ? recordedInfo.phoneNo : editedInfo.phoneNo)
+    setRecordedInfoPhoneNo(
+      editedInfoPhoneNo === " " ? recordedInfoPhoneNo : editedInfoPhoneNo
     );
-    setRecordedInfo(
-      (recordedInfo.address =
-        editedInfo.address === " " ? recordedInfo.address : editedInfo.address)
+    setRecordedInfoAddress(
+      editedInfoAddress === " " ? recordedInfoAddress : editedInfoAddress
     );
-    setRecordedInfo(
-      (recordedInfo.about =
-        editedInfo.about === " " ? recordedInfo.about : editedInfo.about)
+    setRecordedInfoAbout(
+      editedInfoAbout === " " ? recordedInfoAbout : editedInfoAbout
     );
-    setEditedInfo({
-      name: " ",
-      email: " ",
-      phoneNo: " ",
-      address: " ",
-      about: " ",
-    });
+    setEditedInfoName(" ");
+    setEditedInfoEmail(" ");
+    setEditedInfoPhoneNo(" ");
+    setEditedInfoAddress(" ");
+    setEditedInfoAbout(" ");
+
     setEditStatus(false);
   };
   return (
@@ -76,7 +68,7 @@ const GeneralInfo = () => {
               name
               <input
                 type="text"
-                defaultValue={recordedInfo.name}
+                defaultValue={recordedInfoName}
                 onChange={handleName}
               />
             </label>
@@ -86,7 +78,7 @@ const GeneralInfo = () => {
               email
               <input
                 type="email"
-                defaultValue={recordedInfo.email}
+                defaultValue={recordedInfoEmail}
                 onChange={handleEmail}
               />
             </label>
@@ -96,7 +88,7 @@ const GeneralInfo = () => {
               phone no.
               <input
                 type="tel"
-                defaultValue={recordedInfo.phoneNo}
+                defaultValue={recordedInfoPhoneNo}
                 onChange={handlePhoneNo}
               />
             </label>
@@ -106,7 +98,7 @@ const GeneralInfo = () => {
               address
               <input
                 type="text"
-                defaultValue={recordedInfo.address}
+                defaultValue={recordedInfoAddress}
                 onChange={handleAddress}
               />
             </label>
@@ -117,7 +109,7 @@ const GeneralInfo = () => {
               <textarea
                 rows="5"
                 columns="33"
-                defaultValue={recordedInfo.about}
+                defaultValue={recordedInfoAbout}
                 onChange={handleAbout}
               />
             </label>
@@ -127,11 +119,11 @@ const GeneralInfo = () => {
       )}
       {!editStatus && (
         <div>
-          <div>name:{recordedInfo.name} </div>
-          <div> email:{recordedInfo.email}</div>
-          <div> phone number:{recordedInfo.phoneNo}</div>
-          <div> address:{recordedInfo.address}</div>
-          <div> about:{recordedInfo.about}</div>
+          <div>name:{recordedInfoName} </div>
+          <div> email:{recordedInfoEmail}</div>
+          <div> phone number:{recordedInfoPhoneNo}</div>
+          <div> address:{recordedInfoAddress}</div>
+          <div> about:{recordedInfoAbout}</div>
           <button onClick={activateEditStatus}>edit</button>
         </div>
       )}

@@ -43,7 +43,7 @@ function DisplayUnitComponent(props) {
                 {props.displayNames.title}
                 <input
                   type="text"
-                  onChange={this.props.handleStudyNameChange}
+                  onChange={props.handleStudyNameChange}
                 />
               </label>
             </div>
@@ -62,7 +62,7 @@ function DisplayUnitComponent(props) {
             <div>
               <label>
                 {props.displayNames.endDate}
-                <input type="text" onChange={this.props.handleEndChange} />
+                <input type="text" onChange={props.handleEndChange} />
               </label>
             </div>
             <button onClick={props.addSection}>add section</button>
