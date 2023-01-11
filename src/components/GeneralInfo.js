@@ -69,7 +69,7 @@ const GeneralInfo = () => {
   return (
     <div>
       <div className="sectionHead">General information</div>
-      {this.state.editStatus && (
+      {editStatus && (
         <form onSubmit={handleSubmit}>
           <div>
             <label>
