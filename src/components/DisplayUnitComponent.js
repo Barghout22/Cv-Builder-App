@@ -38,37 +38,40 @@ class DisplayUnitComponent extends Component {
 
         {this.props.additionStatus && (
           <div>
-            <div>
-              <label>
-                {this.props.displayNames.title}
-                <input
-                  type="text"
-                  onChange={this.props.handleStudyNameChange}
-                />
-              </label>
-            </div>
-            <div>
-              <label>
-                {this.props.displayNames.schoolName}
-                <input
-                  type="text"
-                  onChange={this.props.handleSchoolNameChange}
-                />
-              </label>
-            </div>
-            <div>
-              <label>
-                {this.props.displayNames.startDate}
-                <input type="text" onChange={this.props.handleStartChange} />
-              </label>
-            </div>
-            <div>
-              <label>
-                {this.props.displayNames.endDate}
-                <input type="text" onChange={this.props.handleEndChange} />
-              </label>
-            </div>
-            <button onClick={this.props.addSection}>add section</button>
+            <fieldset>
+              <legend>Add your experience</legend>
+              <div>
+                <label>
+                  {this.props.displayNames.title}
+                  <input
+                    type="text"
+                    onChange={this.props.handleStudyNameChange}
+                  />
+                </label>
+              </div>
+              <div>
+                <label>
+                  {this.props.displayNames.schoolName}
+                  <input
+                    type="text"
+                    onChange={this.props.handleSchoolNameChange}
+                  />
+                </label>
+              </div>
+              <div>
+                <label>
+                  {this.props.displayNames.startDate}
+                  <input type="text" onChange={this.props.handleStartChange} />
+                </label>
+              </div>
+              <div>
+                <label>
+                  {this.props.displayNames.endDate}
+                  <input type="text" onChange={this.props.handleEndChange} />
+                </label>
+              </div>
+              <button onClick={this.props.addSection}>add section</button>
+            </fieldset>
           </div>
         )}
       </div>

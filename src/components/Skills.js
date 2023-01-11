@@ -45,7 +45,7 @@ class Skills extends Component {
   render() {
     return (
       <div>
-        <div>Skills</div>
+        <div className="sectionHead">Skills</div>
 
         <ul>
           {this.state.skillList.map((item) => {

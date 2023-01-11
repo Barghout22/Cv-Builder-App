@@ -107,7 +107,7 @@ class Education extends Component {
   render() {
     return (
       <div>
-        <div>Education Info</div>
+        <div className="sectionHead">Education Info</div>
         <DisplayUnitComponent
           educationFields={this.state.educationFields}
           displayNames={this.state.displayNames}

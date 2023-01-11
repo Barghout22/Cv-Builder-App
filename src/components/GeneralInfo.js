@@ -128,7 +128,7 @@ class GeneralInfo extends Component {
   render() {
     return (
       <div>
-        <div className="generalInfoTitle">General information</div>
+        <div className="sectionHead">General information</div>
         {this.state.editStatus && (
           <form onSubmit={this.handleSubmit}>
             <div>
@@ -153,7 +153,7 @@ class GeneralInfo extends Component {
             </div>
             <div>
               <label>
-                phone number
+                phone no.
                 <input
                   type="tel"
                   defaultValue={this.state.recordedInfo.phoneNo}
@@ -170,8 +170,8 @@ class GeneralInfo extends Component {
                   onChange={this.handleAdress}
                 />
               </label>
-              
-            </div><div>
+            </div>
+            <div>
               <label>
                 about you
                 <textarea

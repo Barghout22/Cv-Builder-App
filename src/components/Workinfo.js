@@ -106,7 +106,7 @@ class WorkInfo extends Component {
   render() {
     return (
       <div>
-        <div>Work information</div>
+        <div className="sectionHead">Work information</div>
         <DisplayUnitComponent
           educationFields={this.state.WorkFields}
           displayNames={this.state.displayNames}

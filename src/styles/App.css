@@ -10,5 +10,21 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 30px repeat(4, minmax(200px, 1fr));
+  grid-template-rows: 5em repeat(4, 1fr);
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.projectTitle {
+  font-size: 4em;
+}
+.sectionHead {
+  font-size: 2em;
+}
+
+fieldset {
+  width: 50vw;
 }
