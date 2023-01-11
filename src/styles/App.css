@@ -10,8 +10,8 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 5em repeat(4, 1fr);
-  justify-content: center;
+  grid-template-rows: 5em minmax(1fr, 200px) repeat(3, 1fr);
+  gap: 2em;
 }
 
 ul {
