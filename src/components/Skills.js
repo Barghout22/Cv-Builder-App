@@ -1,78 +1,59 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import uniqid from "uniqid";
 
-class Skills extends Component {
-  constructor() {
-    super();
-    this.state = {
-      skillList: [],
-      editedSkill: { skill: "", id: uniqid() },
-      addStatus: false,
-    };
-    this.addSkill = this.addSkill.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleAddition = this.handleAddition.bind(this);
-    this.deleteSkill = this.deleteSkill.bind(this);
-  }
+const Skills = () => {
+  const [skillList, setSkillList] = useState([]);
+  const [editedSkill, setEditedSkill] = useState({ skill: "", id: uniqid() });
+  const [addStatus, setAddStatus] = useState(false);
 
-  addSkill() {
-    this.setState({
-      addStatus: true,
-    });
-  }
+  const addSkill = () => {
+    setAddStatus(true);
+  };
 
-  handleChange(event) {
-    this.setState({
-      editedSkill: { skill: event.target.value, id: this.state.editedSkill.id },
-    });
-  }
+  const handleChange = (event) => {
+    setEditedSkill((editedSkill.skill = event.target.value));
+  };
 
-  handleAddition() {
-    this.setState({
-      skillList: this.state.skillList.concat(this.state.editedSkill),
-      editedSkill: { skill: "", id: uniqid() },
-      addStatus: false,
-    });
-  }
-  deleteSkill(id) {
-    this.setState({
-      skillList: this.state.skillList.filter((item) => {
+  const handleAddition = () => {
+    setSkillList(skillList.concat(editedSkill));
+    setEditedSkill({ skill: "", id: uniqid() });
+    setAddStatus(false);
+  };
+  const deleteSkill = (id) => {
+    setSkillList(
+      skillList.filter((item) => {
         return item.id !== id;
-      }),
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="sectionHead">Skills</div>
-
-        <ul>
-          {this.state.skillList.map((item) => {
-            return (
-              <li key={item.id}>
-                {" "}
-                {item.skill}
-                <button onClick={() => this.deleteSkill(item.id)}>x</button>
-              </li>
-            );
-          })}
-        </ul>
-        {this.state.addStatus && (
-          <span>
-            <label>
-              add skill
-              <input type="text" onChange={this.handleChange} />
-            </label>
-            <button onClick={this.handleAddition}>add</button>
-          </span>
-        )}
-        {!this.state.addStatus && (
-          <button onClick={this.addSkill}>add skill</button>
-        )}
-      </div>
+      })
     );
-  }
-}
+  };
+
+  return (
+    <div>
+      <div className="sectionHead">Skills</div>
+
+      <ul>
+        {skillList.map((item) => {
+          return (
+            <li key={item.id}>
+              {" "}
+              {item.skill}
+              <button onClick={() => deleteSkill(item.id)}>x</button>
+            </li>
+          );
+        })}
+      </ul>
+      {addStatus && (
+        <span>
+          <label>
+            add skill
+            <input type="text" onChange={handleChange} />
+          </label>
+          <button onClick={handleAddition}>add</button>
+        </span>
+      )}
+      {!addStatus && <button onClick={addSkill}>add skill</button>}
+    </div>
+  );
+};
 
 export default Skills;

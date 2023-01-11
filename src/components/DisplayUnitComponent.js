@@ -1,82 +1,76 @@
-import React, { Component } from "react";
+import React from "react";
 
-class DisplayUnitComponent extends Component {
+function DisplayUnitComponent(props) {
   // constructor(props) {
   //   super(props);
   // }
 
-  render() {
-    return (
-      <div>
-        {this.props.educationFields && (
-          <div>
-            {this.props.educationFields.map((item) => (
-              <div key={item.id}>
-                <p>
-                  {" "}
-                  {this.props.displayNames.title}:
-                  {item.studyTitle || item.workTitle}
-                </p>
-                <p>
-                  {" "}
-                  {this.props.displayNames.schoolName}:
-                  {item.schoolName || item.companyName}
-                </p>
-                <p> start Date:{item.startDate}</p>
-                <p>End Date:{item.endDate} </p>
-                <button
-                  onClick={() => {
-                    this.props.deleteSection(item.id);
-                  }}
-                >
-                  delete section
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
+  return (
+    <div>
+      {props.educationFields && (
+        <div>
+          {props.educationFields.map((item) => (
+            <div key={item.id}>
+              <p>
+                {" "}
+                {props.displayNames.title}:{item.studyTitle || item.workTitle}
+              </p>
+              <p>
+                {" "}
+                {props.displayNames.schoolName}:
+                {item.schoolName || item.companyName}
+              </p>
+              <p> start Date:{item.startDate}</p>
+              <p>End Date:{item.endDate} </p>
+              <button
+                onClick={() => {
+                  props.deleteSection(item.id);
+                }}
+              >
+                delete section
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
 
-        {this.props.additionStatus && (
-          <div>
-            <fieldset>
-              <legend>Add your experience</legend>
-              <div>
-                <label>
-                  {this.props.displayNames.title}
-                  <input
-                    type="text"
-                    onChange={this.props.handleStudyNameChange}
-                  />
-                </label>
-              </div>
-              <div>
-                <label>
-                  {this.props.displayNames.schoolName}
-                  <input
-                    type="text"
-                    onChange={this.props.handleSchoolNameChange}
-                  />
-                </label>
-              </div>
-              <div>
-                <label>
-                  {this.props.displayNames.startDate}
-                  <input type="text" onChange={this.props.handleStartChange} />
-                </label>
-              </div>
-              <div>
-                <label>
-                  {this.props.displayNames.endDate}
-                  <input type="text" onChange={this.props.handleEndChange} />
-                </label>
-              </div>
-              <button onClick={this.props.addSection}>add section</button>
-            </fieldset>
-          </div>
-        )}
-      </div>
-    );
-  }
+      {props.additionStatus && (
+        <div>
+          <fieldset>
+            <legend>Add your experience</legend>
+            <div>
+              <label>
+                {props.displayNames.title}
+                <input
+                  type="text"
+                  onChange={this.props.handleStudyNameChange}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                {props.displayNames.schoolName}
+                <input type="text" onChange={props.handleSchoolNameChange} />
+              </label>
+            </div>
+            <div>
+              <label>
+                {props.displayNames.startDate}
+                <input type="text" onChange={props.handleStartChange} />
+              </label>
+            </div>
+            <div>
+              <label>
+                {props.displayNames.endDate}
+                <input type="text" onChange={this.props.handleEndChange} />
+              </label>
+            </div>
+            <button onClick={props.addSection}>add section</button>
+          </fieldset>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default DisplayUnitComponent;
