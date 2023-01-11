@@ -133,7 +133,7 @@ class GeneralInfo extends Component {
           <form onSubmit={this.handleSubmit}>
             <div>
               <label>
-                name
+                Name :
                 <input
                   type="text"
                   defaultValue={this.state.recordedInfo.name}
@@ -143,7 +143,7 @@ class GeneralInfo extends Component {
             </div>
             <div>
               <label>
-                email
+                Email:
                 <input
                   type="email"
                   defaultValue={this.state.recordedInfo.email}
@@ -153,7 +153,7 @@ class GeneralInfo extends Component {
             </div>
             <div>
               <label>
-                phone no.
+                Number:
                 <input
                   type="tel"
                   defaultValue={this.state.recordedInfo.phoneNo}
@@ -163,7 +163,7 @@ class GeneralInfo extends Component {
             </div>
             <div>
               <label>
-                address
+                Address:
                 <input
                   type="text"
                   defaultValue={this.state.recordedInfo.address}
@@ -173,10 +173,10 @@ class GeneralInfo extends Component {
             </div>
             <div>
               <label>
-                about you
+                About :
                 <textarea
-                  rows="5"
-                  columns="33"
+                  rows="10"
+                  columns="50"
                   defaultValue={this.state.recordedInfo.about}
                   onChange={this.handleAbout}
                 />
